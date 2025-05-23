@@ -25,8 +25,8 @@ Através de um site simples, bonito e funcional, mostramos como é possível cri
 
 Este site foi desenvolvido por:
 
-- **Sammy Guolong** – Líder do projeto e responsável pelo alinhamento do desenvolvimento com as expectativas do cliente  
+- **Sammy Zhao** – Líder do projeto e responsável pelo alinhamento do desenvolvimento com as expectativas do cliente  
 - **Sanmara Lima** – Design e estrutura de conteúdo  
-- **Cássio Ferro** – Organização e coordenação do projeto  
+- **Cassio Ferro** – Organização e coordenação do projeto  
 - **Lucas Almeida** – Desenvolvimento front-end
 
