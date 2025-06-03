@@ -2,27 +2,27 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clínica Holística - Roberto Watanabe</title>
-  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <style type="text/tailwindcss">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Holística - Roberto Watanabe</title>
+<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
     @theme {
-            --color-tema: #c49b33;
-            --color-tema2: #2d472e;
-            --color-fundo: #f9f5e7;
-            --animate-float: float 3s ease-in-out infinite;
-        }
+        --color-tema: #c49b33;
+        --color-tema2: #2d472e;
+        --color-fundo: #f9f5e7;
+        --animate-float: float 3s ease-in-out infinite;
+    }
         
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .floating-delay-200 { animation-delay: 0.2s; }
-        .floating-delay-400 { animation-delay: 0.4s; }
-    </style>
+    @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .floating-delay-200 { animation-delay: 0.2s; }
+    .floating-delay-400 { animation-delay: 0.4s; }
+</style>
 </head>
 
 <body class="bg-fundo text-tema2 font-sans">
@@ -40,9 +40,6 @@
       </svg>
       <h1 class="text-gray-300 text-5xl mb-2 font-light md:text-3xl">Roberto Watanabe</h1>
       <p class="text-tema text-2xl mb-10 uppercase tracking-[2px]">Clínica Holística</p>
-      <a href="#"
-        class="bg-black bg-opacity-40 text-white border-2 border-tema px-7 py-3 text-base rounded-full cursor-pointer transition-all duration-300 no-underline inline-block hover:bg-tema hover:text-tema2 hover:-translate-y-1 hover:shadow-lg"
-        id="agendarBtn">Agende sua consulta</a>
     </div>
   </div>
 
@@ -123,6 +120,14 @@
         <p class="text-sm text-white text-opacity-80">Rejuvenescimento, hidratação, revitalização</p>
       </div>
     </div>
+    <a href="#"
+    class="mt-16 inline-block px-10 py-4 rounded-full text-white font-bold text-lg bg-gradient-to-r from-tema to-tema2 border-2 border-tema hover:bg-tema hover:text-tema2 hover:-translate-y-1 hover:shadow-lg 
+    transition-all duration-300 no-underline shadow-md backdrop-blur-sm"
+    style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);"
+    id="agendarBtn">
+        Agende sua consulta
+    </a>
+
   </section>
 
   <!-- Equipe Section -->
