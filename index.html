@@ -74,9 +74,10 @@
   <!-- Terapias Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="terapias">
     <h2 class="text-4xl mb-8 text-tema2">Terapias Oferecidas</h2>
+    
     <div class="flex flex-wrap justify-center gap-5 mt-10">
       <div
-        class="hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
+        class="therapy-card hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
         <div class="text-tema text-4xl mb-4">
           <svg class="w-12 h-12 mx-auto" viewBox="0 0 24 24">
             <path fill="currentColor"
@@ -87,7 +88,7 @@
         <p class="text-sm text-white text-opacity-80">Pressão, equilíbrio, energia</p>
       </div>
       <div
-        class="hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
+        class="therapy-card hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
         <div class="text-tema text-4xl mb-4">
           <svg class="w-12 h-12 mx-auto" viewBox="0 0 24 24">
             <path fill="currentColor"
@@ -98,7 +99,7 @@
         <p class="text-sm text-white text-opacity-80">Estimulação, equilíbrio, analgesia</p>
       </div>
       <div
-        class="hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
+        class="therapy-card hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
         <div class="text-tema text-4xl mb-4">
           <svg class="w-12 h-12 mx-auto" viewBox="0 0 24 24">
             <path fill="currentColor"
@@ -109,7 +110,7 @@
         <p class="text-sm text-white text-opacity-80">Relaxamento, circulação, revitalização.</p>
       </div>
       <div
-        class="hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
+        class="therapy-card hover:cursor-pointer bg-tema2 text-white w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3">
         <div class="text-tema text-4xl mb-4">
           <svg class="w-12 h-12 mx-auto" viewBox="0 0 24 24">
             <path fill="currentColor"
@@ -148,25 +149,30 @@
   </footer>
 
   <!-- Modal Overlay -->
-  <div class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-70 hidden justify-center items-center z-[100]"
-    id="overlay">
-    <div class="bg-white p-8 rounded-lg w-[90%] max-w-lg text-center relative">
+  <div id="overlay" class="fixed inset-0 hidden z-[100] flex items-center justify-center backdrop-blur-sm bg-white/10 p-4 overflow-y-auto pt-24">
+    
+    <!-- Container do Modal -->
+    <div class="bg-white p-8 rounded-lg w-full max-w-lg relative shadow-lg">
+      <!-- Botão de fechar -->
       <span class="absolute top-3 right-4 text-2xl cursor-pointer text-tema2" id="closeBtn">&times;</span>
+      
       <h2 class="text-tema2 mb-5">Agendar Consulta</h2>
-      <form id="agendamentoForm">
-        <div class="mb-4 text-left">
+      
+      <!-- Formulário -->
+      <form id="agendamentoForm" class="space-y-4">
+        <div class="text-left">
           <label class="block mb-1 text-tema2" for="nome">Nome Completo</label>
           <input type="text" id="nome" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
-        <div class="mb-4 text-left">
+        <div class="text-left">
           <label class="block mb-1 text-tema2" for="email">Email</label>
           <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
-        <div class="mb-4 text-left">
+        <div class="text-left">
           <label class="block mb-1 text-tema2" for="telefone">Telefone</label>
           <input type="tel" id="telefone" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
-        <div class="mb-4 text-left">
+        <div class="text-left">
           <label class="block mb-1 text-tema2" for="terapia">Terapia Desejada</label>
           <select id="terapia" class="w-full p-3 border border-gray-300 rounded" required>
             <option value="">Selecione uma terapia</option>
@@ -176,18 +182,20 @@
             <option value="estetica-facial">Estética Facial</option>
           </select>
         </div>
-        <div class="mb-4 text-left">
+        <div class="text-left">
           <label class="block mb-1 text-tema2" for="data">Data Preferencial</label>
           <input type="date" id="data" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
-        <div class="mb-4 text-left">
+        <div class="text-left">
           <label class="block mb-1 text-tema2" for="mensagem">Alguma informação adicional?</label>
           <textarea id="mensagem" class="w-full p-3 border border-gray-300 rounded" rows="3"></textarea>
         </div>
+        
         <button type="submit"
-          class="bg-black bg-opacity-40 text-white border-2 border-tema px-7 py-3 text-base rounded-full cursor-pointer transition-all duration-300 hover:bg-tema hover:text-tema2 hover:-translate-y-1 hover:shadow-lg">Enviar</button>
+          class="bg-black bg-opacity-40 text-white border-2 border-tema px-7 py-3 text-base rounded-full cursor-pointer transition-all duration-300 hover:bg-tema hover:text-tema2 hover:-translate-y-1 hover:shadow-lg">
+          Enviar
+        </button>
       </form>
-
     </div>
   </div>
 
