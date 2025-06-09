@@ -11,6 +11,7 @@
     @theme {
         --color-tema: #c49b33;
         --color-tema2: #2d472e;
+        --color-tema3: #141f14;
         --color-fundo: #f9f5e7;
         --animate-float: float 3s ease-in-out infinite;
     }
@@ -116,22 +117,33 @@
 
   </section>
 
-  <!-- Equipe Section -->
-  <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="equipe">
-    <h2 class="text-4xl mb-8 text-tema2">Equipe</h2>
-    <div class="flex flex-wrap justify-center gap-10 mt-10">
-      <div class="w-[200px]">
-        <img src="./images/Roberto-Perfil.png" alt="Terapeuta"
-          class="w-[150px] h-[150px] rounded-full object-cover border-4 border-tema mb-4 transition-transform duration-300 hover:scale-105 mx-auto">
-        <h3 class="text-xl mb-1">Dr. Watanabe</h3>
-        <p class="text-tema2 opacity-80">Fundador e Terapeuta</p>
-      </div>
-    </div>
-  </section>
+  <!-- Contato section -->
+  <section class="bg-tema2 bg-opacity-80 text-white px-6 py-10">
 
-  <footer class="bg-tema2 text-white text-center py-6" id="footer">
-    <p class="text-sm">&copy; Direitos por Dr. Roberto Watanabe</p>
-  </footer>
+    <div class="text-center mb-6">
+        <h2 class="text-4xl mb-8 text-white">Contato</h2>
+    </div>
+    <div class="flex flex-col md:flex-row items-center justify-center gap-8">
+        
+        <!-- Imagem do Watanabe -->
+        <div class="flex-shrink-0">
+        <img src="./images/Roberto-Perfil.png" alt="Sr. Watanabe"
+            class="w-[190px] h-[190px] rounded-full object-cover border-4 border-tema transition-transform duration-300 hover:scale-105" />
+        </div>
+
+        <!-- Informações de contato -->
+        <div class="text-center md:text-left space-y-2">
+        <p>Email: <a href="#" class="underline">contato@srwatanabe.com</a></p>
+        <p>Telefone: <a href="#" class="underline" target="_blank">(55) 99999-9999</a></p>
+        <p>Facebook: <a href="https://www.facebook.com/srwatanabe" class="underline" target="_blank">facebook.com/srwatanabe</a></p>
+        </div>
+    </div>
+
+  </section>
+  <!-- Footer section -->
+  <div class="pt-4 text-center text-sm text-white text-opacity-80 bg-tema3 p-5">
+    © 2025 Roberto Watanabe. Todos os direitos reservados.
+  </div>
 
   <!-- Modal Overlay -->
   <div id="overlay" class="fixed inset-0 hidden z-[100] flex items-center justify-center backdrop-blur-sm bg-white/10 p-4 overflow-y-auto pt-24">
