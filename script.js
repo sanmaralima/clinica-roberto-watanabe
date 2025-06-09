@@ -4,6 +4,14 @@ const agendarBtn = document.getElementById('agendarBtn');
         const form = document.getElementById('agendamentoForm');
         const therapyCards = document.querySelectorAll('.therapy-card');
         
+        const overlayTerapia = document.getElementById('modalTerapiaContent');
+        const closeTerapiaBtn = document.getElementById('closeTerapiaBtn');
+
+        const terapiaIcon = document.getElementById('terapiaIcon');
+        const terapiaTitulo = document.getElementById('terapiaTitulo');
+        const terapiaDescricao = document.getElementById('terapiaDescricao');
+        
+        
         agendarBtn.addEventListener('click', function(e) {
             e.preventDefault();
             overlay.style.display = 'flex';
@@ -21,7 +29,19 @@ const agendarBtn = document.getElementById('agendarBtn');
                 document.body.style.overflow = 'auto';
             }
         });
-        
+
+        closeTerapiaBtn.addEventListener('click', function () {
+        overlayTerapia.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        });
+
+        overlayTerapia.addEventListener('click', function (e) {
+        if (e.target === overlayTerapia) {
+            overlayTerapia.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        });
+
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -40,20 +60,20 @@ const agendarBtn = document.getElementById('agendarBtn');
         });
         
         therapyCards.forEach(card => {
-            card.addEventListener('click', function() {
-                const terapiaSelecionada = card.querySelector('.therapy-title').textContent;
-                overlay.style.display = 'flex';
-                document.body.style.overflow = 'hidden';
-                
-                const selectTerapia = document.getElementById('terapia');
-                for (let i = 0; i < selectTerapia.options.length; i++) {
-                    if (selectTerapia.options[i].text === terapiaSelecionada) {
-                        selectTerapia.selectedIndex = i;
-                        break;
-                    }
-                }
-            });
+        card.addEventListener('click', function () {
+            const icon = card.querySelector('svg').outerHTML;
+            const titulo = card.querySelector('h3').textContent;
+            const descricao = card.querySelector('p').textContent;
+
+            terapiaIcon.innerHTML = icon;
+            terapiaTitulo.textContent = titulo;
+            terapiaDescricao.textContent = descricao;
+
+            overlayTerapia.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
         });
+        });
+
         
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
