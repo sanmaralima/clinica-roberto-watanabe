@@ -57,13 +57,12 @@ const terapias = [
     }
 ];
 
-// Função para gerar os cards de terapia
 function gerarCards() {
     const container = document.getElementById('terapias-container');
     
     terapias.forEach(terapia => {
     const card = document.createElement('div');
-    card.className = 'therapy-card hover:cursor-pointer w-[250px] py-8 px-5 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3 text-white';
+    card.className = 'therapy-card hover:cursor-pointer w-[250px] py-16 px-10 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3 text-white';
     card.style.backgroundImage = `url('${terapia.imagem}')`;
     card.setAttribute('data-terapia', terapia.id);
     card.setAttribute('data-titulo', terapia.titulo);
@@ -91,7 +90,6 @@ const terapiaImagemModal = document.getElementById('terapiaImagemModal');
 const terapiaTitulo = document.getElementById('terapiaTitulo');
 const terapiaDescricao = document.getElementById('terapiaDescricao');
 
-// Função para gerar as opções do select de terapias
 function gerarOpcoesSelect() {
     const select = document.getElementById('terapia');
     
@@ -158,7 +156,7 @@ form.addEventListener('submit', function(e) {
     }, 1500);
 });
 
-// Event listener para os cards de terapia (usando delegação de eventos)
+// Event listener para os cards de terapia
 document.addEventListener('click', function(e) {
     if (e.target.closest('.therapy-card')) {
         const card = e.target.closest('.therapy-card');
@@ -210,7 +208,6 @@ mobileMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
 });
 
-// Fechar menu mobile ao clicar em um link
 const mobileLinks = mobileMenu.querySelectorAll('a');
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
@@ -218,7 +215,6 @@ mobileLinks.forEach(link => {
     });
 });
 
-// Conectar botões de agendar do nav com o modal original
 document.getElementById('agendarNavBtn').addEventListener('click', () => {
     overlay.style.display = 'flex';
     document.body.style.overflow = 'hidden';
@@ -230,7 +226,6 @@ document.getElementById('agendarMobileBtn').addEventListener('click', () => {
     mobileMenu.classList.add('hidden');
 });
 
-// Adicionar funcionalidade de ESC para fechar modais
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         mobileMenu.classList.add('hidden');
