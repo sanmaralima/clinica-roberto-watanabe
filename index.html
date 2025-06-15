@@ -39,21 +39,21 @@
       <svg class="w-[200px] h-[200px] mb-[10px] mx-auto" viewBox="0 0 100 100">
         <image href="./images/logo.png" width="100" height="100" />
       </svg>
-      <h1 class="text-gray-300 text-5xl mb-2 font-light md:text-3xl">Roberto Watanabe</h1>
-      <p class="text-tema text-2xl mb-10 uppercase tracking-[2px]">Clínica Holística</p>
+      <h1 class="text-gray-300 text-5xl mb-2 font-light md:text-4xl">Roberto Watanabe</h1>
+      <p class="text-tema text-3xl mb-10 uppercase tracking-[2px]">Clínica Holística</p>
     </div>
   </div>
 
   <!-- Sobre Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="sobre">
-    <h2 class="text-4xl mb-8 text-tema2">Sobre a Clínica</h2>
+    <h2 class="text-4xl mb-8 text-tema2">SOBRE A CLÍNICA</h2>
     <p class="text-xl leading-relaxed max-w-4xl mx-auto mb-10">Fundada por Roberto Watanabe, nossa clínica oferece
       terapias holísticas que promovem a saúde integral, unindo corpo, mente e espírito.</p>
   </section>
 
   <!-- Terapias Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="terapias">
-    <h2 class="text-4xl mb-8 text-tema2">Terapias Oferecidas</h2>
+    <h2 class="text-4xl mb-8 text-tema2">TERAPIAS OFERECIDAS</h2>
     
     <div class="flex flex-wrap justify-center gap-5 mt-10">
       
@@ -118,29 +118,49 @@
   </section>
 
   <!-- Contato section -->
-  <section class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10">
-
-    <div class="text-center mb-6">
-        <h2 class="text-4xl mb-8 text-white">Contato</h2>
+  <section class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10" id="contato">
+    <div class="text-center mb-10">
+      <h2 class="text-4xl mb-4 text-white">CONTATO</h2>
     </div>
-    <div class="flex flex-col md:flex-row items-center justify-center gap-16 mb-8">
-        
-        <!-- Imagem do Watanabe -->
-        <div class="flex-shrink-0">
+
+    <div class="flex flex-col lg:flex-row items-center justify-center gap-10 mb-8">
+      <!-- Imagem do Watanabe -->
+      <div class="flex-shrink-0 mb-8 lg:mb-0">
         <img src="./images/Roberto-Perfil.png" alt="Sr. Watanabe"
-            class="w-[260px] h-[260px] rounded-full object-cover border-4 border-tema transition-transform duration-300 hover:scale-105" />
+          class="w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] lg:w-[260px] lg:h-[260px] rounded-full object-cover border-4 border-tema transition-transform duration-300 hover:scale-105" />
+      </div>
+
+      <!-- Informações de contato -->
+      <div class="space-y-6 text-lg sm:text-xl md:text-2xl text-center lg:text-left">
+        
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
+          <img class="w-10 h-10" src="./images/gmail.png" alt="icone email">
+          <div class="flex items-center flex-row gap-4">
+            <p class="text-tema">EMAIL:</p>
+            <p>contato@srwatanabe.com</p>
+          </div>
         </div>
 
-        <!-- Informações de contato -->
-        <div class="flex flex-col md:text-left space-y-8 text-2xl"> <!-- Aumenta a fonte aqui -->
-          <p>EMAIL: <a href="#" class="underline">contato@srwatanabe.com</a></p>
-          <p>TELEFONE: <a href="#" class="underline" target="_blank">(55) 99999-9999</a></p>
-          <p>FACEBOOK: <a href="https://www.facebook.com/srwatanabe" class="underline" target="_blank">facebook.com/srwatanabe</a></p>
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
+          <img class="w-10 h-10" src="./images/whatsapp.png" alt="icone whatsapp">
+          <div class="flex items-center flex-row gap-4">
+            <p class="text-tema">WHATSAPP:</p>
+            <p>(55) 99999-9999</p>
+          </div>
         </div>
 
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
+          <img class="w-10 h-10" src="./images/facebook.png" alt="icone facebook">
+          <div class="flex items-center flex-row gap-4">
+            <p class="text-tema">FACEBOOK:</p>
+            <a href="#" class="underline">facebook.com/srwatanabe</a>
+          </div>
+        </div>
+
+      </div>
     </div>
-
   </section>
+
 
   <!-- Footer section -->
   <div class="pt-4 text-center text-sm text-white text-opacity-80 bg-tema3 p-5">
