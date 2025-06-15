@@ -96,3 +96,28 @@ const agendarBtn = document.getElementById('agendarBtn');
             const hero = document.querySelector('.hero');
             hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
         });
+
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fechar menu mobile ao clicar em um link
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // Conectar botões de agendar do nav com o modal original
+    document.getElementById('agendarNavBtn').addEventListener('click', () => {
+      document.getElementById('overlay').classList.remove('hidden');
+    });
+
+    document.getElementById('agendarMobileBtn').addEventListener('click', () => {
+      document.getElementById('overlay').classList.remove('hidden');
+      mobileMenu.classList.add('hidden');
+    });
