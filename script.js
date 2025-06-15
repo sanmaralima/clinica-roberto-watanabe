@@ -1,3 +1,15 @@
+const agendarBtn = document.getElementById('agendarBtn');
+const overlay = document.getElementById('overlay');
+const closeBtn = document.getElementById('closeBtn');
+const form = document.getElementById('agendamentoForm');
+
+const overlayTerapia = document.getElementById('modalTerapiaContent');
+const closeTerapiaBtn = document.getElementById('closeTerapiaBtn');
+
+const terapiaImagemModal = document.getElementById('terapiaImagemModal');
+const terapiaTitulo = document.getElementById('terapiaTitulo');
+const terapiaDescricao = document.getElementById('terapiaDescricao');
+
 const terapias = [
     {
         id: 'do-in',
@@ -26,34 +38,6 @@ const terapias = [
         subtitulo: 'Rejuvenescimento, hidratação, revitalização',
         descricao: 'Tratamentos faciais holísticos que combinam técnicas orientais e naturais para rejuvenescimento, hidratação profunda e revitalização da pele.',
         imagem: './images/img_terapia4.jpg'
-    },
-    {
-        id: 'estetica-facial',
-        titulo: 'Estética Facial',
-        subtitulo: 'Rejuvenescimento, hidratação, revitalização',
-        descricao: 'Tratamentos faciais holísticos que combinam técnicas orientais e naturais para rejuvenescimento, hidratação profunda e revitalização da pele.',
-        imagem: './images/img_terapia4.jpg'
-    },
-    {
-        id: 'mochaterapia',
-        titulo: 'Mochaterapia',
-        subtitulo: 'Relaxamento, circulação, revitalização',
-        descricao: 'Terapia que utiliza calor controlado através de moxa (artemísia) para estimular pontos específicos, promovendo relaxamento, melhora da circulação e revitalização.',
-        imagem: './images/img_terapia3.webp'
-    },
-    {
-        id: 'acupuntura',
-        titulo: 'Acupuntura',
-        subtitulo: 'Estimulação, equilíbrio, analgesia',
-        descricao: 'Milenar técnica chinesa que utiliza agulhas finas em pontos específicos do corpo para estimular o equilíbrio energético e promover analgesia natural.',
-        imagem: './images/img_terapia2.webp'
-    },
-    {
-        id: 'do-in',
-        titulo: 'Do-In',
-        subtitulo: 'Pressão, equilíbrio, energia',
-        descricao: 'Técnica de automassagem e pressão que promove o equilíbrio energético do corpo através de movimentos específicos e pressão nos pontos de acupuntura.',
-        imagem: './images/img_terapia1.jpg'
     }
 ];
 
@@ -78,18 +62,6 @@ function gerarCards() {
     });
 }
 
-const agendarBtn = document.getElementById('agendarBtn');
-const overlay = document.getElementById('overlay');
-const closeBtn = document.getElementById('closeBtn');
-const form = document.getElementById('agendamentoForm');
-
-const overlayTerapia = document.getElementById('modalTerapiaContent');
-const closeTerapiaBtn = document.getElementById('closeTerapiaBtn');
-
-const terapiaImagemModal = document.getElementById('terapiaImagemModal');
-const terapiaTitulo = document.getElementById('terapiaTitulo');
-const terapiaDescricao = document.getElementById('terapiaDescricao');
-
 function gerarOpcoesSelect() {
     const select = document.getElementById('terapia');
     
@@ -101,13 +73,11 @@ function gerarOpcoesSelect() {
     });
 }
 
-// Gerar os cards e opções quando a página carregar
 document.addEventListener('DOMContentLoaded', function() {
     gerarCards();
     gerarOpcoesSelect();
 });
 
-// Event listeners para os modais
 agendarBtn.addEventListener('click', function(e) {
     e.preventDefault();
     overlay.style.display = 'flex';
@@ -138,7 +108,6 @@ overlayTerapia.addEventListener('click', function (e) {
     }
 });
 
-// Event listener para o formulário
 form.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -156,7 +125,6 @@ form.addEventListener('submit', function(e) {
     }, 1500);
 });
 
-// Event listener para os cards de terapia
 document.addEventListener('click', function(e) {
     if (e.target.closest('.therapy-card')) {
         const card = e.target.closest('.therapy-card');
@@ -194,7 +162,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Remover o parallax que estava causando erro
+
 // window.addEventListener('scroll', function() {
 //     const scrollPosition = window.pageYOffset;
 //     const hero = document.querySelector('.hero');

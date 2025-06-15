@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -120,7 +119,6 @@
   <!-- Hero Section -->
   <div class="bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900  h-[500px] flex flex-col justify-center items-center text-center relative overflow-hidden pt-16"
     id="hero">
-    <!-- Decorative Elements -->
 
     <!-- Hero Content -->
     <div class="relative z-[2]">
@@ -134,20 +132,21 @@
 
   <!-- Sobre Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="sobre">
-    <h2 class="text-4xl mb-8 text-tema2">SOBRE A CLÍNICA</h2>
+    <h2 class="text-4xl mb-8 text-tema2 uppercase">Sobre a Clinica</h2>
     <p class="text-xl leading-relaxed max-w-4xl mx-auto mb-10">Fundada por Roberto Watanabe, nossa clínica oferece
       terapias holísticas que promovem a saúde integral, unindo corpo, mente e espírito.</p>
   </section>
 
   <!-- Terapias Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="terapias">
-    <h2 class="text-4xl mb-8 text-tema2">TERAPIAS OFERECIDAS</h2>
+    <h2 class="text-4xl mb-8 text-tema2 uppercase">Terapias Oferecidas</h2>
     
-    <!-- Container dos cards que será preenchido pelo JavaScript -->
+    <!-- Cards das terapias -->
     <div id="terapias-container" class="flex flex-wrap justify-center gap-5 mt-10">
-      <!-- Cards serão gerados automaticamente pelo JavaScript -->
+      <!-- cards gerados automaticamente por js -->
     </div>
 
+    <!-- Botão agendar consulta -->
     <a href="#" class="mt-16 inline-block px-10 py-4 rounded-full text-white font-bold text-lg bg-gradient-to-r from-green-900 to-green-800 border-2 border-tema hover:bg-tema  hover:-translate-y-1 hover:shadow-lg transition-all duration-300 no-underline shadow-md backdrop-blur-sm"
     style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);"
     id="agendarBtn">
@@ -159,11 +158,11 @@
   <!-- Contato section -->
   <section class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10" id="contato">
     <div class="text-center mb-10">
-      <h2 class="text-4xl mb-4 text-white">CONTATO</h2>
+      <h2 class="text-4xl mb-4 text-white uppercase">Contato</h2>
     </div>
 
     <div class="flex flex-col lg:flex-row items-center justify-center gap-10 mb-8">
-      <!-- Imagem do Watanabe -->
+      <!-- Imagem do Roberto -->
       <div class="flex-shrink-0 mb-8 lg:mb-0">
         <img src="./images/Roberto-Perfil.png" alt="Sr. Watanabe"
           class="w-[200px] h-[200px] sm:w-[220px] sm:h-[220px] md:w-[240px] md:h-[240px] lg:w-[260px] lg:h-[260px] rounded-full object-cover border-4 border-tema transition-transform duration-300 hover:scale-105" />
@@ -171,7 +170,6 @@
 
       <!-- Informações de contato -->
       <div class="space-y-6 text-lg sm:text-xl md:text-2xl text-center lg:text-left">
-        
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
           <img class="w-10 h-10" src="./images/gmail.png" alt="icone email">
           <div class="flex items-center flex-row gap-4">
@@ -179,7 +177,6 @@
             <p>contato@srwatanabe.com</p>
           </div>
         </div>
-
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
           <img class="w-10 h-10" src="./images/whatsapp.png" alt="icone whatsapp">
           <div class="flex items-center flex-row gap-4">
@@ -187,7 +184,6 @@
             <p>(55) 99999-9999</p>
           </div>
         </div>
-
         <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
           <img class="w-10 h-10" src="./images/facebook.png" alt="icone facebook">
           <div class="flex items-center flex-row gap-4">
@@ -195,7 +191,6 @@
             <a href="#" class="underline">facebook.com/srwatanabe</a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -244,6 +239,10 @@
           <input type="date" id="data" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
         <div class="text-left">
+          <label class="block mb-1 text-tema2" for="queixa">Queixa</label>
+          <textarea id="queixa" class="w-full p-3 border border-gray-300 rounded" rows="3" required></textarea>
+        </div>
+        <div class="text-left">
           <label class="block mb-1 text-tema2" for="mensagem">Alguma informação adicional?</label>
           <textarea id="mensagem" class="w-full p-3 border border-gray-300 rounded" rows="3"></textarea>
         </div>
@@ -272,8 +271,6 @@
     </div>
   </div>
 
-
   <script src="/script.js"></script>
 </body>
-
 </html>
