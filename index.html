@@ -15,8 +15,7 @@
         --color-tema3: #141f14;
         --color-fundo: #f9f5e7;
         --animate-float: float 3s ease-in-out infinite;
-        
-        /* Dark Mode Colors */
+     
         --color-dark-bg: #000000;
         --color-dark-secondary: #2C4029;
         --color-dark-accent: #A67924;
@@ -61,7 +60,7 @@
         z-index: 1;
     }
 
-    /* Dark Mode Styles */
+
     [data-theme="dark"] {
         --color-fundo: #000000;
         --color-tema2: #EFDDA8;
@@ -101,13 +100,12 @@
         color: #EFDDA8;
     }
 
- /* Estilo padrão (modo claro) */
-/* Estilo padrão (modo claro) */
+
 .theme-toggle {
   position: relative;
   width: 60px;
   height: 30px;
-  background: #ddd; /* Fundo do botão no modo claro */
+  background: #ddd;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -121,26 +119,24 @@
   left: 3px;
   width: 20px;
   height: 20px;
-  background: white; /* ✅ Bege clara no modo claro */
+  background: white; 
   border-radius: 50%;
   transition: transform 0.3s ease, background 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transform: translateX(0); /* Bolinha à esquerda no claro */
-}
+  transform: translateX(0); 
 
-/* Modo escuro */
+}
 [data-theme="dark"] .theme-toggle {
-  background: #A67924; /* Fundo escuro do botão */
+  background: #A67924; 
   border-color: #A67924
 }
 
 [data-theme="dark"] .theme-toggle::before {
-  transform: translateX(28px); /* Bolinha à direita no escuro */
-  background: white; /* ✅ Branca no modo escuro */
+  transform: translateX(28px); 
+  background: white; 
 }
 
 
-    /* Icons for theme toggle */
     .theme-icon {
         position: absolute;
         top: 50%;
@@ -298,9 +294,11 @@
   <section class="py-15 px-5 max-w-6xl mx-auto text-center transition-colors duration-300" id="sobre">
     <h2 class="text-3xl sm:text-4xl mb-8 text-tema2 font-semibold" id="titles">Sobre a Clinica</h2>
     <p class="text-lg sm:text-xl leading-relaxed max-w-4xl mx-auto mb-10 text-tema2" id="descriptions">Fundada por
-      Roberto Watanabe, nossa clínica oferece
-      terapias holísticas que promovem a saúde integral, unindo corpo, mente e espírito.</p>
+      A Roberto Watanabe Clínica Holística é um espaço dedicado ao cuidado da saúde e do bem-estar. Fundada a partir da experiência pessoal de seu idealizador, Roberto Watanabe, a clínica nasceu do desejo de compreender e tratar, de forma natural, dores persistentes que o afetavam. Movido por essa busca, Roberto se aprofundou nos estudos das terapias holísticas e realizou cursos de formação técnica no Japão, onde teve contato direto com práticas tradicionais e recursos terapêuticos.
+
+    <br>Hoje, a clínica oferece atendimentos que unem conhecimento técnico a uma escuta acolhedora. A proposta é promover não apenas o alívio de sintomas, mas também um processo contínuo de reconexão, permitindo que cada pessoa tenha um estado mais profundo de equilíbrio e bem-estar duradouro.</p>
   </section>
+
 
   <!-- Terapias Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center transition-colors duration-300" id="terapias">

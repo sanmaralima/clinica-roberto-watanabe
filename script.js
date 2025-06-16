@@ -217,9 +217,6 @@ function toggleTheme() {
   localStorage.setItem('theme', newTheme);
   updateThemeIcons(newTheme);
 
-  console.log("TEMA ATUAL:", newTheme);
-
-
   const contactTitle = document.getElementById("contact-title");
   if (newTheme === 'dark') {
     contactTitle.classList.add('text-tema2');
@@ -230,11 +227,9 @@ function toggleTheme() {
   }
 }
 
-// Aplicar tema salvo ao carregar
 const savedTheme = localStorage.getItem('theme') || 'light';
 document.body.setAttribute('data-theme', savedTheme);
 updateThemeIcons(savedTheme);
 
-// Listeners
 document.getElementById('themeToggle').addEventListener('click', toggleTheme);
 document.getElementById('mobileThemeToggle').addEventListener('click', toggleTheme);
