@@ -13,6 +13,12 @@
         --color-tema3: #141f14;
         --color-fundo: #f9f5e7;
         --animate-float: float 3s ease-in-out infinite;
+        
+        /* Dark Mode Colors */
+        --color-dark-bg: #1E1E1E;
+        --color-dark-secondary: #2C4029;
+        --color-dark-accent: #A67924;
+        --color-dark-light: #EFDDA8;
     }
         
     @keyframes float {
@@ -28,6 +34,8 @@
         background-position: center;
         background-repeat: no-repeat;
         position: relative;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+        border: 1px solid #4a7449;
     }
     
     .therapy-card::before {
@@ -50,10 +58,113 @@
         position: relative;
         z-index: 1;
     }
+
+    /* Dark Mode Styles */
+    [data-theme="dark"] {
+        --color-fundo: #1E1E1E;
+        --color-tema2: #EFDDA8;
+        --color-tema3: #2C4029;
+        --color-tema: #A67924;
+    }
+
+    [data-theme="dark"] .bg-fundo {
+        background-color: #1E1E1E;
+    }
+
+    [data-theme="dark"] .text-tema2 {
+        color: #EFDDA8;
+    }
+
+    [data-theme="dark"] .bg-tema2\/95 {
+        background-color: rgba(44, 64, 41, 0.95);
+    }
+
+    [data-theme="dark"] .bg-tema3 {
+        background-color: #2C4029;
+    }
+
+    [data-theme="dark"] .border-tema\/20 {
+        border-color: rgba(166, 121, 36, 0.2);
+    }
+
+    [data-theme="dark"] .hover\:bg-tema\/10:hover {
+        background-color: rgba(166, 121, 36, 0.1);
+    }
+
+    [data-theme="dark"] .bg-gradient-to-r.from-green-600 {
+        background: linear-gradient(to right, #2C4029, #1E1E1E, #2C4029);
+    }
+
+    [data-theme="dark"] .text-gray-300 {
+        color: #EFDDA8;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+        position: relative;
+        width: 60px;
+        height: 30px;
+        background: #ddd;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid #ccc;
+    }
+
+    .theme-toggle::before {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 20px;
+        height: 20px;
+        background: white;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    }
+
+    [data-theme="dark"] .theme-toggle {
+        background: #A67924;
+        border-color: #A67924;
+    }
+
+    [data-theme="dark"] .theme-toggle::before {
+        transform: translateX(28px);
+        background: #EFDDA8;
+    }
+
+    /* Icons for theme toggle */
+    .theme-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        transition: opacity 0.3s ease;
+    }
+
+    .sun-icon {
+        left: 6px;
+        opacity: 1;
+    }
+
+    .moon-icon {
+        right: 6px;
+        opacity: 0.3;
+    }
+
+    [data-theme="dark"] .sun-icon {
+        opacity: 0.3;
+    }
+
+    [data-theme="dark"] .moon-icon {
+        opacity: 1;
+    }
 </style>
 </head>
 
-<body class="bg-fundo text-tema2 font-sans">
+<body class="bg-fundo text-tema2 font-sans transition-colors duration-300" data-theme="light">
 
   <!-- Navigation Menu -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-tema2/95 backdrop-blur-md border-b border-tema/20">
@@ -86,13 +197,34 @@
             Contato
             <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
-          <button id="agendarNavBtn" class="bg-tema hover:bg-tema/80 text-tema2 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105">
+          
+          <!-- Theme Toggle Button -->
+          <div class="theme-toggle" id="themeToggle">
+            <svg class="theme-icon sun-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+            </svg>
+            <svg class="theme-icon moon-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </div>
+
+          <button id="agendarNavBtn" class="bg-tema hover:bg-tema/80 text-tema2 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:cursor-pointer">
             Agendar
           </button>
         </div>
 
         <!-- Mobile Menu Button -->
-        <div class="md:hidden">
+        <div class="md:hidden flex items-center space-x-3">
+          <!-- Mobile Theme Toggle -->
+          <div class="theme-toggle scale-75" id="mobileThemeToggle">
+            <svg class="theme-icon sun-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+            </svg>
+            <svg class="theme-icon moon-icon" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
+            </svg>
+          </div>
+          
           <button id="mobileMenuBtn" class="text-white hover:text-tema transition-colors duration-300">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -131,15 +263,15 @@
   </div>
 
   <!-- Sobre Section -->
-  <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="sobre">
-    <h2 class="text-4xl mb-8 text-tema2 uppercase">Sobre a Clinica</h2>
-    <p class="text-xl leading-relaxed max-w-4xl mx-auto mb-10">Fundada por Roberto Watanabe, nossa clínica oferece
+  <section class="py-15 px-5 max-w-6xl mx-auto text-center transition-colors duration-300" id="sobre">
+    <h2 class="text-4xl mb-8 text-tema2 font-semibold" id="titles">Sobre a Clinica</h2>
+    <p class="text-xl leading-relaxed max-w-4xl mx-auto mb-10 text-tema2" id="descriptions">Fundada por Roberto Watanabe, nossa clínica oferece
       terapias holísticas que promovem a saúde integral, unindo corpo, mente e espírito.</p>
   </section>
 
   <!-- Terapias Section -->
-  <section class="py-15 px-5 max-w-6xl mx-auto text-center" id="terapias">
-    <h2 class="text-4xl mb-8 text-tema2 uppercase">Terapias Oferecidas</h2>
+  <section class="py-15 px-5 max-w-6xl mx-auto text-center transition-colors duration-300" id="terapias">
+    <h2 class="text-4xl mb-8 text-tema2 font-semibold" id="titles">Terapias Oferecidas</h2>
     
     <!-- Cards das terapias -->
     <div id="terapias-container" class="flex flex-wrap justify-center gap-5 mt-10">
@@ -156,9 +288,9 @@
   </section>
 
   <!-- Contato section -->
-  <section class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10" id="contato">
+  <section class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10 transition-colors duration-300" id="contato">
     <div class="text-center mb-10">
-      <h2 class="text-4xl mb-4 text-white uppercase">Contato</h2>
+      <h2 class="text-4xl mb-4 text-white font-semibold" id="titles">Contato</h2>
     </div>
 
     <div class="flex flex-col lg:flex-row items-center justify-center gap-10 mb-8">
@@ -196,7 +328,7 @@
   </section>
 
   <!-- Footer section -->
-  <div class="pt-4 text-center text-sm text-white text-opacity-80 bg-tema3 p-5">
+  <div class="pt-4 text-center text-sm text-white text-opacity-80 bg-tema3 p-5 transition-colors duration-300">
     © 2025 Roberto Watanabe. Todos os direitos reservados.
   </div>
 
@@ -270,7 +402,6 @@
       <p id="terapiaDescricao" class="text-base text-tema2 leading-relaxed">Descrição</p>
     </div>
   </div>
-
-  <script src="/script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
