@@ -54,8 +54,8 @@ function gerarCards() {
     card.setAttribute('data-imagem', terapia.imagem);
     
     card.innerHTML = `
-        <h3 class="text-2xl mb-3">${terapia.titulo}</h3>
-        <p class="text-sm text-white text-opacity-80">${terapia.subtitulo}</p>
+        <h3 class="text-2xl mb-3 font-semibold">${terapia.titulo}</h3>
+        <p class="text-sm text-white">${terapia.subtitulo}</p>
     `;
     
     container.appendChild(card);
@@ -213,4 +213,12 @@ themeToggle.addEventListener('click', () => {
   
   document.body.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
+
+  const contactTitle = document.getElementById("contact-title")
+
+   if (newTheme === 'dark') {
+    contactTitle.classList.add('text-tema2');
+  } else {
+    contactTitle.classList.remove('text-tema2');
+  }
 });

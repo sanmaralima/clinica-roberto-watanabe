@@ -8,6 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 <style type="text/tailwindcss">
     @theme {
+      
         --color-tema: #c49b33;
         --color-tema2: #2d472e;
         --color-tema3: #141f14;
@@ -15,7 +16,7 @@
         --animate-float: float 3s ease-in-out infinite;
         
         /* Dark Mode Colors */
-        --color-dark-bg: #1E1E1E;
+        --color-dark-bg: #000000;
         --color-dark-secondary: #2C4029;
         --color-dark-accent: #A67924;
         --color-dark-light: #EFDDA8;
@@ -61,18 +62,18 @@
 
     /* Dark Mode Styles */
     [data-theme="dark"] {
-        --color-fundo: #1E1E1E;
+        --color-fundo: #000000;
         --color-tema2: #EFDDA8;
         --color-tema3: #2C4029;
         --color-tema: #A67924;
     }
 
     [data-theme="dark"] .bg-fundo {
-        background-color: #1E1E1E;
+        background-color: #000000;
     }
 
     [data-theme="dark"] .text-tema2 {
-        color: #EFDDA8;
+        color: #A67924;
     }
 
     [data-theme="dark"] .bg-tema2\/95 {
@@ -92,7 +93,7 @@
     }
 
     [data-theme="dark"] .bg-gradient-to-r.from-green-600 {
-        background: linear-gradient(to right, #2C4029, #1E1E1E, #2C4029);
+        background: #2C4029
     }
 
     [data-theme="dark"] .text-gray-300 {
@@ -208,7 +209,7 @@
             </svg>
           </div>
 
-          <button id="agendarNavBtn" class="bg-tema hover:bg-tema/80 text-tema2 px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:cursor-pointer">
+          <button id="agendarNavBtn" class="bg-tema hover:bg-tema/80 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:cursor-pointer">
             Agendar
           </button>
         </div>
@@ -290,7 +291,7 @@
   <!-- Contato section -->
   <section class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10 transition-colors duration-300" id="contato">
     <div class="text-center mb-10">
-      <h2 class="text-4xl mb-4 text-white font-semibold" id="titles">Contato</h2>
+      <h2 class="text-4xl mb-4 text-tema2 font-semibold" id="contact-title">Contato</h2>
     </div>
 
     <div class="flex flex-col lg:flex-row items-center justify-center gap-10 mb-8">
