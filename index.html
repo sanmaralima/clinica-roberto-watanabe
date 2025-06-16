@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clínica Holística - Roberto Watanabe</title>
-<link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-<style type="text/tailwindcss">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clínica Holística - Roberto Watanabe</title>
+  <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style type="text/tailwindcss">
     @theme {
       
         --color-tema: #c49b33;
@@ -100,40 +101,44 @@
         color: #EFDDA8;
     }
 
-    /* Theme Toggle Button */
-    .theme-toggle {
-        position: relative;
-        width: 60px;
-        height: 30px;
-        background: #ddd;
-        border-radius: 50px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid #ccc;
-    }
+ /* Estilo padrão (modo claro) */
+/* Estilo padrão (modo claro) */
+.theme-toggle {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background: #ddd; /* Fundo do botão no modo claro */
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #ccc;
+}
 
-    .theme-toggle::before {
-        content: '';
-        position: absolute;
-        top: 3px;
-        left: 3px;
-        width: 20px;
-        height: 20px;
-        background: white;
-        border-radius: 50%;
-        transition: all 0.3s ease;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    }
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background: white; /* ✅ Bege clara no modo claro */
+  border-radius: 50%;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transform: translateX(0); /* Bolinha à esquerda no claro */
+}
 
-    [data-theme="dark"] .theme-toggle {
-        background: #A67924;
-        border-color: #A67924;
-    }
+/* Modo escuro */
+[data-theme="dark"] .theme-toggle {
+  background: #A67924; /* Fundo escuro do botão */
+  border-color: #A67924
+}
 
-    [data-theme="dark"] .theme-toggle::before {
-        transform: translateX(28px);
-        background: #EFDDA8;
-    }
+[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(28px); /* Bolinha à direita no escuro */
+  background: white; /* ✅ Branca no modo escuro */
+}
+
 
     /* Icons for theme toggle */
     .theme-icon {
@@ -147,13 +152,19 @@
 
     .sun-icon {
         left: 6px;
-        opacity: 1;
     }
 
     .moon-icon {
         right: 6px;
-        opacity: 0.3;
     }
+
+    [data-theme="light"] .sun-icon {
+    opacity: 1;
+}
+
+[data-theme="light"] .moon-icon {
+    opacity: 0.3;
+}
 
     [data-theme="dark"] .sun-icon {
         opacity: 0.3;
@@ -162,6 +173,7 @@
     [data-theme="dark"] .moon-icon {
         opacity: 1;
     }
+    
 </style>
 </head>
 
@@ -171,45 +183,54 @@
   <nav class="fixed top-0 left-0 right-0 z-50 bg-tema2/95 backdrop-blur-md border-b border-tema/20">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex justify-between items-center h-16">
-        
+
         <!-- Logo -->
         <div class="flex items-center space-x-3">
           <svg class="w-10 h-10" viewBox="0 0 100 100">
             <image href="./images/logo.png" width="100" height="100" />
           </svg>
-          <span class="text-tema font-semibold text-lg hidden sm:block">Roberto Watanabe</span>
+          <span class="text-tema font-semibold text-lg sm:block">Roberto Watanabe</span>
         </div>
 
         <!-- Desktop Menu -->
-        <div class="hidden md:flex items-center space-x-8">
+        <div class="hidden md:flex items-center space-x-8 ">
           <a href="#hero" class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
             Início
-            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            <span
+              class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
           <a href="#sobre" class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
             Sobre
-            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            <span
+              class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
-          <a href="#terapias" class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
+          <a href="#terapias"
+            class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
             Terapias
-            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            <span
+              class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
-          <a href="#contato" class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
+          <a href="#contato"
+            class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
             Contato
-            <span class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
+            <span
+              class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
           </a>
-          
+
           <!-- Theme Toggle Button -->
           <div class="theme-toggle" id="themeToggle">
             <svg class="theme-icon sun-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd" />
             </svg>
             <svg class="theme-icon moon-icon" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </svg>
           </div>
 
-          <button id="agendarNavBtn" class="bg-tema hover:bg-tema/80 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:cursor-pointer">
+          <button id="agendarNavBtn"
+            class="bg-tema hover:bg-tema/80 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300 hover:scale-105 hover:cursor-pointer">
             Agendar
           </button>
         </div>
@@ -219,14 +240,17 @@
           <!-- Mobile Theme Toggle -->
           <div class="theme-toggle scale-75" id="mobileThemeToggle">
             <svg class="theme-icon sun-icon" fill="currentColor" viewBox="0 0 20 20">
-              <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" clip-rule="evenodd" />
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd" />
             </svg>
             <svg class="theme-icon moon-icon" fill="currentColor" viewBox="0 0 20 20">
               <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z" />
             </svg>
           </div>
-          
-          <button id="mobileMenuBtn" class="text-white hover:text-tema transition-colors duration-300">
+
+          <button id="mobileMenuBtn"
+            class="text-white hover:text-tema transition-colors duration-300 hover:cursor-pointer">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -235,13 +259,19 @@
       </div>
 
       <!-- Mobile Menu -->
-      <div id="mobileMenu" class="md:hidden hidden bg-tema2/95 backdrop-blur-md border-t border-tema/20">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <a href="#hero" class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Início</a>
-          <a href="#sobre" class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Sobre</a>
-          <a href="#terapias" class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Terapias</a>
-          <a href="#contato" class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Contato</a>
-          <button id="agendarMobileBtn" class="w-full mt-2 bg-tema hover:bg-tema/80 text-tema2 px-6 py-2 rounded-full font-semibold transition-all duration-300">
+      <div id="mobileMenu"
+        class="md:hidden hidden bg-tema2/95 backdrop-blur-md border-t border-tema/20 hover:cursor-pointer">
+        <div class="px-2 pt-2 pb-3 space-y-1 hover:cursor-pointer">
+          <a href="#hero"
+            class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Início</a>
+          <a href="#sobre"
+            class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Sobre</a>
+          <a href="#terapias"
+            class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Terapias</a>
+          <a href="#contato"
+            class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Contato</a>
+          <button id="agendarMobileBtn"
+            class="w-full mt-2 bg-tema hover:bg-tema/80 text-white px-6 py-2 rounded-full font-semibold transition-all duration-300">
             Agendar Consulta
           </button>
         </div>
@@ -250,7 +280,8 @@
   </nav>
 
   <!-- Hero Section -->
-  <div class="bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900  h-[500px] flex flex-col justify-center items-center text-center relative overflow-hidden pt-16"
+  <div
+    class="bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900  h-[500px] flex flex-col justify-center items-center text-center relative overflow-hidden pt-16"
     id="hero">
 
     <!-- Hero Content -->
@@ -258,38 +289,41 @@
       <svg class="w-[200px] h-[200px] mb-[10px] mx-auto" viewBox="0 0 100 100">
         <image href="./images/logo.png" width="100" height="100" />
       </svg>
-      <h1 class="text-gray-300 text-5xl mb-2 font-light md:text-4xl">Roberto Watanabe</h1>
-      <p class="text-tema text-3xl mb-10 uppercase tracking-[2px]">Clínica Holística</p>
+      <h1 class="text-gray-300 text-4xl mb-2 font-light font-semibold md:text-4xl">Roberto Watanabe</h1>
+      <p class="text-tema text-2xl mb-10 uppercase tracking-[2px]">Clínica Holística</p>
     </div>
   </div>
 
   <!-- Sobre Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center transition-colors duration-300" id="sobre">
-    <h2 class="text-4xl mb-8 text-tema2 font-semibold" id="titles">Sobre a Clinica</h2>
-    <p class="text-xl leading-relaxed max-w-4xl mx-auto mb-10 text-tema2" id="descriptions">Fundada por Roberto Watanabe, nossa clínica oferece
+    <h2 class="text-3xl sm:text-4xl mb-8 text-tema2 font-semibold" id="titles">Sobre a Clinica</h2>
+    <p class="text-lg sm:text-xl leading-relaxed max-w-4xl mx-auto mb-10 text-tema2" id="descriptions">Fundada por
+      Roberto Watanabe, nossa clínica oferece
       terapias holísticas que promovem a saúde integral, unindo corpo, mente e espírito.</p>
   </section>
 
   <!-- Terapias Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center transition-colors duration-300" id="terapias">
     <h2 class="text-4xl mb-8 text-tema2 font-semibold" id="titles">Terapias Oferecidas</h2>
-    
+
     <!-- Cards das terapias -->
     <div id="terapias-container" class="flex flex-wrap justify-center gap-5 mt-10">
       <!-- cards gerados automaticamente por js -->
     </div>
 
     <!-- Botão agendar consulta -->
-    <a href="#" class="mt-16 inline-block px-10 py-4 rounded-full text-white font-bold text-lg bg-gradient-to-r from-green-900 to-green-800 border-2 border-tema hover:bg-tema  hover:-translate-y-1 hover:shadow-lg transition-all duration-300 no-underline shadow-md backdrop-blur-sm"
-    style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);"
-    id="agendarBtn">
-        Agende sua consulta
+    <a href="#"
+      class="mt-16 inline-block px-10 py-4 rounded-full text-white font-bold text-lg bg-gradient-to-r from-green-900 to-green-800 border-2 border-tema hover:bg-tema  hover:-translate-y-1 hover:shadow-lg transition-all duration-300 no-underline shadow-md backdrop-blur-sm"
+      style="text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);" id="agendarBtn">
+      Agende sua consulta
     </a>
 
   </section>
 
   <!-- Contato section -->
-  <section class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10 transition-colors duration-300" id="contato">
+  <section
+    class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10 transition-colors duration-300"
+    id="contato">
     <div class="text-center mb-10">
       <h2 class="text-4xl mb-4 text-tema2 font-semibold" id="contact-title">Contato</h2>
     </div>
@@ -302,24 +336,24 @@
       </div>
 
       <!-- Informações de contato -->
-      <div class="space-y-6 text-lg sm:text-xl md:text-2xl text-center lg:text-left">
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
-          <img class="w-10 h-10" src="./images/gmail.png" alt="icone email">
-          <div class="flex items-center flex-row gap-4">
+      <div class="space-y-6 text-lg sm:text-xl md:text-2xl text-left">
+        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
+          <img class="w-11 h-11" src="./images/gmail.png" alt="icone email">
+          <div class="flex items-center flex-row gap-2 md:gap-4">
             <p class="text-tema">EMAIL:</p>
             <p>contato@srwatanabe.com</p>
           </div>
         </div>
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
-          <img class="w-10 h-10" src="./images/whatsapp.png" alt="icone whatsapp">
-          <div class="flex items-center flex-row gap-4">
+        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
+          <img class="w-9 h-9" src="./images/whatsapp.png" alt="icone whatsapp">
+          <div class="flex items-center flex-row gap-2 md:gap-4">
             <p class="text-tema">WHATSAPP:</p>
             <p>(55) 99999-9999</p>
           </div>
         </div>
-        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 sm:gap-4">
-          <img class="w-10 h-10" src="./images/facebook.png" alt="icone facebook">
-          <div class="flex items-center flex-row gap-4">
+        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
+          <img class="w-9 h-9" src="./images/facebook.png" alt="icone facebook">
+          <div class="flex items-center flex-row gap-2 md:gap-4">
             <p class="text-tema">FACEBOOK:</p>
             <a href="#" class="underline">facebook.com/srwatanabe</a>
           </div>
@@ -334,32 +368,33 @@
   </div>
 
   <!-- Modal Overlay -->
-  <div id="overlay" class="fixed inset-0 hidden z-[100] flex items-center justify-center backdrop-blur-sm bg-white/10 p-4 overflow-y-auto pt-24">
-    
+  <div id="overlay"
+    class="fixed inset-0 hidden z-[100] flex items-center justify-center backdrop-blur-sm bg-white/10 p-4 overflow-y-auto pt-24">
+
     <!-- Container do Modal -->
-    <div class="bg-white p-8 rounded-lg w-full max-w-lg relative shadow-lg">
+    <div class="bg-fundo p-8 rounded-lg w-full max-w-lg relative shadow-lg">
       <!-- Botão de fechar -->
       <span class="absolute top-3 right-4 text-2xl cursor-pointer text-tema2" id="closeBtn">&times;</span>
-      
-      <h2 class="text-tema2 mb-5">Agendar Consulta</h2>
-      
+
+      <h2 class="text-tema2 mb-5 text-center font-bold text-lg">Agendar Consulta</h2>
+
       <!-- Formulário -->
       <form id="agendamentoForm" class="space-y-4">
         <div class="text-left">
-          <label class="block mb-1 text-tema2" for="nome">Nome Completo</label>
+          <label class="block mb-1 text-tema2 font-semibold" for="nome">Nome Completo</label>
           <input type="text" id="nome" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
         <div class="text-left">
-          <label class="block mb-1 text-tema2" for="email">Email</label>
+          <label class="block mb-1 text-tema2 font-semibold" for="email">Email</label>
           <input type="email" id="email" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
         <div class="text-left">
-          <label class="block mb-1 text-tema2" for="telefone">Telefone</label>
+          <label class="block mb-1 text-tema2 font-semibold" for="telefone">Telefone</label>
           <input type="tel" id="telefone" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
         <div class="text-left">
-          <label class="block mb-1 text-tema2" for="terapia">Terapia Desejada</label>
-          <select id="terapia" class="w-full p-3 border border-gray-300 rounded" required>
+          <label class="block mb-1 text-tema2 font-semibold" for="terapia">Terapia Desejada</label>
+          <select id="terapia" class="w-full p-3 border border-gray-300 rounded bg-fundo" required>
             <option value="">Selecione uma terapia</option>
             <option value="do-in">Do-In</option>
             <option value="acupuntura">Acupuntura</option>
@@ -368,33 +403,36 @@
           </select>
         </div>
         <div class="text-left">
-          <label class="block mb-1 text-tema2" for="data">Data Preferencial</label>
+          <label class="block mb-1 text-tema2 font-semibold" for="data">Data Preferencial</label>
           <input type="date" id="data" class="w-full p-3 border border-gray-300 rounded" required>
         </div>
         <div class="text-left">
-          <label class="block mb-1 text-tema2" for="queixa">Queixa</label>
+          <label class="block mb-1 text-tema2 font-semibold" for="queixa">Queixa</label>
           <textarea id="queixa" class="w-full p-3 border border-gray-300 rounded" rows="3" required></textarea>
         </div>
         <div class="text-left">
-          <label class="block mb-1 text-tema2" for="mensagem">Alguma informação adicional?</label>
+          <label class="block mb-1 text-tema2 font-semibold" for="mensagem">Alguma informação adicional?</label>
           <textarea id="mensagem" class="w-full p-3 border border-gray-300 rounded" rows="3"></textarea>
         </div>
-        
-        <button type="submit"
-          class="bg-black bg-opacity-40 text-white border-2 border-tema px-7 py-3 text-base rounded-full cursor-pointer transition-all duration-300 hover:bg-tema hover:text-tema2 hover:-translate-y-1 hover:shadow-lg">
-          Enviar
-        </button>
+        <div class="flex justify-center">
+          <button type="submit"
+            class="bg-tema bg-opacity-40 text-white px-7 py-3 text-base rounded-full cursor-pointer transition-all duration-300 hover:bg-tema hover:-translate-y-1">
+            Enviar
+          </button>
+        </div>
+
       </form>
     </div>
   </div>
 
   <!-- Modal Terapias -->
-  <div id="modalTerapiaContent" class="fixed inset-0 hidden z-[100] flex items-center justify-center backdrop-blur-sm bg-white/10 p-4 overflow-y-auto pt-24">
-    <div class="bg-white p-8 rounded-lg w-full max-w-lg relative shadow-lg text-center">
-      
+  <div id="modalTerapiaContent"
+    class="fixed inset-0 hidden z-[100] flex items-center justify-center backdrop-blur-sm bg-fundo/10 p-4 overflow-y-auto pt-24">
+    <div class="bg-fundo p-8 rounded-lg w-full max-w-lg relative shadow-lg text-center">
+
       <!-- Botão de fechar -->
       <span class="absolute top-3 right-4 text-2xl cursor-pointer text-tema2" id="closeTerapiaBtn">&times;</span>
-      
+
       <!-- Imagem da terapia no modal -->
       <div class="mb-6 flex justify-center">
         <img id="terapiaImagemModal" src="" alt="" class="w-64 h-64 object-cover border-2 border-tema">
@@ -403,6 +441,7 @@
       <p id="terapiaDescricao" class="text-base text-tema2 leading-relaxed">Descrição</p>
     </div>
   </div>
-<script src="./script.js"></script>
 </body>
+<script src="./script.js"></script>
+
 </html>

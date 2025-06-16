@@ -30,3 +30,5 @@ Este site foi desenvolvido por:
 - **Cassio Ferro** – Organização e coordenação do projeto  
 - **Lucas Almeida** – Desenvolvimento front-end
 
+- **André Ressude** – Desenvolvimento back-end
+

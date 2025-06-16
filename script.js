@@ -43,7 +43,6 @@ const terapias = [
 
 function gerarCards() {
     const container = document.getElementById('terapias-container');
-    
     terapias.forEach(terapia => {
     const card = document.createElement('div');
     card.className = 'therapy-card hover:cursor-pointer w-[250px] py-16 px-10 rounded-lg text-center transition-transform duration-300 hover:-translate-y-3 text-white';
@@ -163,12 +162,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
-// window.addEventListener('scroll', function() {
-//     const scrollPosition = window.pageYOffset;
-//     const hero = document.querySelector('.hero');
-//     hero.style.backgroundPositionY = scrollPosition * 0.5 + 'px';
-// });
-
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
 
@@ -203,22 +196,45 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-// Dark mode simples
-const savedTheme = localStorage.getItem('theme') || 'light';
-document.body.setAttribute('data-theme', savedTheme);
+function updateThemeIcons(theme) {
+  const sunIcons = document.querySelectorAll('.sun-icon');
+  const moonIcons = document.querySelectorAll('.moon-icon');
 
-themeToggle.addEventListener('click', () => {
+  if (theme === 'dark') {
+    sunIcons.forEach(icon => icon.style.opacity = '0.3');
+    moonIcons.forEach(icon => icon.style.opacity = '1');
+  } else {
+    sunIcons.forEach(icon => icon.style.opacity = '1');
+    moonIcons.forEach(icon => icon.style.opacity = '0.3');
+  }
+}
+
+function toggleTheme() {
   const currentTheme = document.body.getAttribute('data-theme');
   const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-  
+
   document.body.setAttribute('data-theme', newTheme);
   localStorage.setItem('theme', newTheme);
+  updateThemeIcons(newTheme);
 
-  const contactTitle = document.getElementById("contact-title")
+  console.log("TEMA ATUAL:", newTheme);
 
-   if (newTheme === 'dark') {
+
+  const contactTitle = document.getElementById("contact-title");
+  if (newTheme === 'dark') {
     contactTitle.classList.add('text-tema2');
   } else {
     contactTitle.classList.remove('text-tema2');
+    contactTitle.classList.add('text-twhite');
+
   }
-});
+}
+
+// Aplicar tema salvo ao carregar
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.body.setAttribute('data-theme', savedTheme);
+updateThemeIcons(savedTheme);
+
+// Listeners
+document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+document.getElementById('mobileThemeToggle').addEventListener('click', toggleTheme);
