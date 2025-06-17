@@ -192,7 +192,7 @@
 
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-8 ">
-          <a href="#hero" class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
+          <a href="#header" class="text-white hover:text-tema font-medium transition-colors duration-300 relative group">
             Início
             <span
               class="absolute bottom-0 left-1/2 w-0 h-0.5 bg-tema transition-all duration-300 group-hover:w-full group-hover:left-0"></span>
@@ -260,7 +260,7 @@
       <div id="mobileMenu"
         class="md:hidden hidden bg-tema2/95 backdrop-blur-md border-t border-tema/20 hover:cursor-pointer">
         <div class="px-2 pt-2 pb-3 space-y-1 hover:cursor-pointer">
-          <a href="#hero"
+          <a href="#header"
             class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Início</a>
           <a href="#sobre"
             class="block px-3 py-2 text-white hover:text-tema hover:bg-tema/10 rounded-md transition-colors duration-300">Sobre</a>
@@ -277,12 +277,12 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- header Section -->
   <div
     class="bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900  h-[500px] flex flex-col justify-center items-center text-center relative overflow-hidden pt-16"
-    id="hero">
+    id="header">
 
-    <!-- Hero Content -->
+    <!-- header Content -->
     <div class="relative z-[2]">
       <svg class="w-[200px] h-[200px] mb-[10px] mx-auto" viewBox="0 0 100 100">
         <image href="./images/logo.png" width="100" height="100" />
@@ -327,8 +327,8 @@
 
   </section>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="py-16 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto transition-colors duration-300">
+  <!-- Questions Section -->
+  <section id="questions" class="py-15 px-5 sm:px-6 md:px-10 max-w-5xl mx-auto transition-colors duration-300">
     <h2 class="text-3xl sm:text-4xl mb-10 text-tema2 font-semibold text-center">Perguntas Frequentes</h2>
 
     <div class="space-y-5">
@@ -424,35 +424,58 @@
       </div>
 
       <!-- Informações de contato -->
-      <div class="space-y-6 text-lg sm:text-xl md:text-2xl text-left">
-        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
-          <img class="w-11 h-11" src="./images/gmail.png" alt="icone email">
-          <div class="flex items-center flex-row gap-2 md:gap-4">
-            <p class="text-tema uppercase">Email:</p>
-            <p>contato@srwatanabe.com</p>
+      <div class="space-y-6 text-left text-base sm:text-lg md:text-xl text-white">
+
+        <!-- Email -->
+        <div class="flex items-center gap-4">
+          <img class="w-10 h-10" src="./images/gmail.png" alt="Ícone email">
+          <div>
+            <p class="text-tema font-semibold">Email:</p>
+            <a href="mailto:robertowatanabetao@hotmail.com" 
+              class="hover:text-red-500">
+              robertowatanabetao@hotmail.com</a>
           </div>
         </div>
-        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
-          <img class="w-9 h-9" src="./images/whatsapp.png" alt="icone whatsapp">
-          <div class="flex items-center flex-row gap-2 md:gap-4">
-            <p class="text-tema uppercase">Whatsapp:</p>
-            <p>(11) 9 7051-4020</p>
+
+        <!-- WhatsApp -->
+        <div class="flex items-center gap-4">
+          <img class="w-10 h-10" src="./images/whatsapp.png" alt="Ícone WhatsApp">
+          <div>
+            <p class="text-tema font-semibold">WhatsApp:</p>
+            <a href="https://wa.me/5511970514020"
+              target="_blank"
+              class="text-white hover:text-green-500 transition">
+              (11) 97051-4020
+            </a>
           </div>
         </div>
-        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
-          <img class="w-9 h-9" src="./images/facebook.png" alt="icone facebook">
-          <div class="flex items-center flex-row gap-2 md:gap-4">
-            <p class="text-tema uppercase">Facebook:</p>
-            <a href="https:/facebook.com/robertowatanabe" target="_blank" class="underline">Roberto Watanabe</a>
+
+        <!-- Facebook -->
+        <div class="flex items-center gap-4">
+          <img class="w-10 h-10" src="./images/facebook.png" alt="Ícone Facebook">
+          <div>
+            <p class="text-tema font-semibold">Facebook:</p>
+            <a id="linkFacebook" href="https://web.facebook.com/roberto.watanabe.148"
+              target="_blank"
+              class="text-white hover:text-blue-500 transition">
+              Roberto Watanabe
+            </a>
           </div>
         </div>
-        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
-          <img class="w-9 h-9" src="./images/iconMaps.png" alt="icone facebook">
-          <div class="flex items-center flex-row gap-2 md:gap-4">
-            <p class="text-tema">Endereço:</p>
-            <a href="#" class="">R. Alberto Grasson, 155 - São Lourenço, Bragança Paulista</a>
+
+        <!-- Endereço -->
+        <div class="flex items-center gap-4">
+          <img class="w-10 h-10" src="./images/iconMaps.png" alt="Ícone Maps">
+          <div>
+            <p class="text-tema font-semibold">Endereço:</p>
+            <a id="linkMaps" href="https://maps.app.goo.gl/tvhnLLzaqHwPpK4V9"
+              target="_blank"
+              class="text-white hover:text-gray-500 transition">
+              R. Alberto Grasson, 155 - São Lourenço, Bragança Paulista
+            </a>
           </div>
         </div>
+
       </div>
     </div>
   </section>
