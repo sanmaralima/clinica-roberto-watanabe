@@ -13,6 +13,7 @@
         --color-tema: #c49b33;
         --color-tema2: #2d472e;
         --color-tema3: #141f14;
+        --color-tema5: #2C4029;
         --color-fundo: #f9f5e7;
         --animate-float: float 3s ease-in-out infinite;
      
@@ -65,6 +66,7 @@
         --color-fundo: #000000;
         --color-tema2: #EFDDA8;
         --color-tema3: #2C4029;
+        --color-tema5: #EFDDA8;
         --color-tema: #A67924;
     }
 
@@ -80,7 +82,7 @@
         background-color: rgba(44, 64, 41, 0.95);
     }
 
-    [data-theme="dark"] .bg-tema3 {
+    [data-theme="dark"] .bg-tema2 {
         background-color: #2C4029;
     }
 
@@ -121,7 +123,7 @@
   height: 20px;
   background: white; 
   border-radius: 50%;
-  transition: transform 0.3s ease, background 0.3s ease;
+  transition: transform 0.3s ease, 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transform: translateX(0); 
 
@@ -293,10 +295,17 @@
   <!-- Sobre Section -->
   <section class="py-15 px-5 max-w-6xl mx-auto text-center transition-colors duration-300" id="sobre">
     <h2 class="text-3xl sm:text-4xl mb-8 text-tema2 font-semibold" id="titles">Sobre a Clinica</h2>
-    <p class="text-lg sm:text-xl leading-relaxed max-w-4xl mx-auto mb-10 text-tema2" id="descriptions">Fundada por
-      A Roberto Watanabe Clínica Holística é um espaço dedicado ao cuidado da saúde e do bem-estar. Fundada a partir da experiência pessoal de seu idealizador, Roberto Watanabe, a clínica nasceu do desejo de compreender e tratar, de forma natural, dores persistentes que o afetavam. Movido por essa busca, Roberto se aprofundou nos estudos das terapias holísticas e realizou cursos de formação técnica no Japão, onde teve contato direto com práticas tradicionais e recursos terapêuticos.
+    <p class="text-lg sm:text-xl leading-relaxed max-w-4xl mx-auto text-tema5" id="descriptions">Fundada por
+      A Roberto Watanabe Clínica Holística é um espaço dedicado ao cuidado da saúde e do bem-estar. Fundada a partir da
+      experiência pessoal de seu idealizador, Roberto Watanabe, a clínica nasceu do desejo de compreender e tratar, de
+      forma natural, dores persistentes que o afetavam. Movido por essa busca, Roberto se aprofundou nos estudos das
+      terapias holísticas e realizou cursos de formação técnica no Japão, onde teve contato direto com práticas
+      tradicionais e recursos terapêuticos.
 
-    <br>Hoje, a clínica oferece atendimentos que unem conhecimento técnico a uma escuta acolhedora. A proposta é promover não apenas o alívio de sintomas, mas também um processo contínuo de reconexão, permitindo que cada pessoa tenha um estado mais profundo de equilíbrio e bem-estar duradouro.</p>
+      <br>Hoje, a clínica oferece atendimentos que unem conhecimento técnico a uma escuta acolhedora. A proposta é
+      promover não apenas o alívio de sintomas, mas também um processo contínuo de reconexão, permitindo que cada pessoa
+      tenha um estado mais profundo de equilíbrio e bem-estar duradouro.
+    </p>
   </section>
 
 
@@ -318,12 +327,93 @@
 
   </section>
 
+  <!-- FAQ Section -->
+  <section id="faq" class="py-16 px-4 sm:px-6 md:px-10 max-w-5xl mx-auto transition-colors duration-300">
+    <h2 class="text-3xl sm:text-4xl mb-10 text-tema2 font-semibold text-center">Perguntas Frequentes</h2>
+
+    <div class="space-y-5">
+      <details class="group border border-tema rounded-lg p-5 bg-tema2 hover:bg-tema2/90 transition-all duration-300">
+        <summary
+          class="flex justify-between items-center cursor-pointer text-white font-semibold text-base sm:text-lg group-open:text-tema transition-colors">
+          O que são terapias holísticas?
+        </summary>
+        <p class="mt-3 text-white text-sm sm:text-base leading-relaxed">
+          As terapias holísticas são abordagens terapêuticas que consideram o ser humano em sua totalidade, incluindo
+          aspectos físicos, mentais e emocionais. Elas se baseiam no princípio de que a saúde e o bem-estar são
+          alcançados através do equilíbrio e da harmonia.
+        </p>
+      </details>
+
+      <details class="group border border-tema rounded-lg p-5 bg-tema2 hover:bg-tema2/90 transition-all duration-300">
+        <summary
+          class="flex justify-between items-center cursor-pointer text-white font-semibold text-base sm:text-lg group-open:text-tema transition-colors">
+          Quais são os benefícios das terapias holísticas?
+        </summary>
+        <p class="mt-3 text-white text-sm sm:text-base leading-relaxed">
+          Essas terapias oferecem diversos benefícios, como o alívio de dores físicas, diminuição do estresse e da
+          ansiedade, melhora significativa da qualidade do sono, fortalecimento do sistema imunológico, equilíbrio
+          emocional, além de contribuir para o crescimento pessoal.
+        </p>
+      </details>
+
+      <details class="group border border-tema rounded-lg p-5 bg-tema2 hover:bg-tema2/90 transition-all duration-300">
+        <summary
+          class="flex justify-between items-center cursor-pointer text-white font-semibold text-base sm:text-lg group-open:text-tema transition-colors">
+          Qual é a principal diferença entre terapias holísticas e medicina convencional?
+        </summary>
+        <p class="mt-3 text-white text-sm sm:text-base leading-relaxed">
+          Enquanto a medicina convencional foca no diagnóstico e tratamento de doenças com o uso de medicamentos,
+          cirurgias e exames, as terapias holísticas atuam de forma complementar, procurando restabelecer o equilíbrio
+          energético do organismo.
+        </p>
+      </details>
+
+      <details class="group border border-tema rounded-lg p-5 bg-tema2 hover:bg-tema2/90 transition-all duration-300">
+        <summary
+          class="flex justify-between items-center cursor-pointer text-white font-semibold text-base sm:text-lg group-open:text-tema transition-colors">
+          Como saber qual é a terapia holística mais adequada para mim?
+        </summary>
+        <p class="mt-3 text-white text-sm sm:text-base leading-relaxed">
+          A escolha da terapia ideal varia conforme as necessidades e objetivos de cada pessoa. É importante buscar
+          orientação com profissionais especializados, que possam avaliar seu quadro geral e indicar a técnica mais
+          adequada.
+        </p>
+      </details>
+
+      <details class="group border border-tema rounded-lg p-5 bg-tema2 hover:bg-tema2/90 transition-all duration-300">
+        <summary
+          class="flex justify-between items-center cursor-pointer text-white font-semibold text-base sm:text-lg group-open:text-tema transition-colors">
+          Para quem as terapias holísticas são indicadas?
+        </summary>
+        <p class="mt-3 text-white text-sm sm:text-base leading-relaxed">
+          Essas terapias são indicadas para pessoas de todas as idades que desejam melhorar sua saúde física, mental
+          e/ou emocional. São especialmente recomendadas para quem busca tratamentos naturais ou quer um cuidado mais
+          personalizado.
+        </p>
+      </details>
+
+      <details class="group border border-tema rounded-lg p-5 bg-tema2 hover:bg-tema2/90 transition-all duration-300">
+        <summary
+          class="flex justify-between items-center cursor-pointer text-white font-semibold text-base sm:text-lg group-open:text-tema transition-colors">
+          Terapias holísticas são seguras?
+        </summary>
+        <p class="mt-3 text-white text-sm sm:text-base leading-relaxed">
+          De modo geral, as terapias holísticas são consideradas seguras quando realizadas por profissionais capacitados
+          e experientes. Entretanto, é fundamental que o paciente mantenha o acompanhamento médico convencional e
+          informe seu terapeuta sobre condições pré-existentes.
+        </p>
+      </details>
+    </div>
+  </section>
+
+
+
   <!-- Contato section -->
   <section
     class="flex flex-col bg-gradient-to-r from-green-600 via-[#2d472e] to-green-900 text-white px-6 py-10 transition-colors duration-300"
     id="contato">
     <div class="text-center mb-10">
-      <h2 class="text-4xl mb-4 text-tema2 font-semibold" id="contact-title">Contato</h2>
+      <h2 class="text-4xl mb-4 text-white font-semibold" id="contact-title">Contato</h2>
     </div>
 
     <div class="flex flex-col lg:flex-row items-center justify-center gap-10 mb-8">
@@ -338,22 +428,29 @@
         <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
           <img class="w-11 h-11" src="./images/gmail.png" alt="icone email">
           <div class="flex items-center flex-row gap-2 md:gap-4">
-            <p class="text-tema">EMAIL:</p>
+            <p class="text-tema uppercase">Email:</p>
             <p>contato@srwatanabe.com</p>
           </div>
         </div>
         <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
           <img class="w-9 h-9" src="./images/whatsapp.png" alt="icone whatsapp">
           <div class="flex items-center flex-row gap-2 md:gap-4">
-            <p class="text-tema">WHATSAPP:</p>
+            <p class="text-tema uppercase">Whatsapp:</p>
             <p>(55) 99999-9999</p>
           </div>
         </div>
         <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
           <img class="w-9 h-9" src="./images/facebook.png" alt="icone facebook">
           <div class="flex items-center flex-row gap-2 md:gap-4">
-            <p class="text-tema">FACEBOOK:</p>
+            <p class="text-tema uppercase">Facebook:</p>
             <a href="#" class="underline">facebook.com/srwatanabe</a>
+          </div>
+        </div>
+        <div class="flex flex-col flex-row items-center justify-start gap-2 sm:gap-4">
+          <img class="w-9 h-9" src="./images/facebook.png" alt="icone facebook">
+          <div class="flex items-center flex-row gap-2 md:gap-4">
+            <p class="text-tema">Endereço:</p>
+            <a href="#" class="underline">Enderço aqui</a>
           </div>
         </div>
       </div>
@@ -361,7 +458,7 @@
   </section>
 
   <!-- Footer section -->
-  <div class="pt-4 text-center text-sm text-white text-opacity-80 bg-tema3 p-5 transition-colors duration-300">
+  <div class="pt-4 text-center text-sm text-white text-opacity-80 bg-tema2 p-5 transition-colors duration-300">
     © 2025 Roberto Watanabe. Todos os direitos reservados.
   </div>
 
@@ -396,7 +493,7 @@
             <option value="">Selecione uma terapia</option>
             <option value="do-in">Do-In</option>
             <option value="acupuntura">Acupuntura</option>
-            <option value="mochaterapia">Mochaterapia</option>
+            <option value="moxaterapia">Moxaterapia</option>
             <option value="estetica-facial">Estética Facial</option>
           </select>
         </div>

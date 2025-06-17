@@ -26,8 +26,8 @@ const terapias = [
         imagem: './images/img_terapia2.webp'
     },
     {
-        id: 'mochaterapia',
-        titulo: 'Mochaterapia',
+        id: 'moxaterapia',
+        titulo: 'Moxaterapia',
         subtitulo: 'Relaxamento, circulação, revitalização',
         descricao: 'Terapia que utiliza calor controlado através de moxa (artemísia) para estimular pontos específicos, promovendo relaxamento, melhora da circulação e revitalização.',
         imagem: './images/img_terapia3.webp'
@@ -222,7 +222,7 @@ function toggleTheme() {
     contactTitle.classList.add('text-tema2');
   } else {
     contactTitle.classList.remove('text-tema2');
-    contactTitle.classList.add('text-twhite');
+    contactTitle.classList.add('text-white');
 
   }
 }
