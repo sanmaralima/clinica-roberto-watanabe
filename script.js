@@ -156,12 +156,10 @@ document.addEventListener('click', function(e) {
     if (e.target.closest('.therapy-card')) {
         const card = e.target.closest('.therapy-card');
         
-        // Buscar informações pelos data-attributes
         const titulo = card.getAttribute('data-titulo');
         const descricao = card.getAttribute('data-descricao');
         const imagem = card.getAttribute('data-imagem');
 
-        // Atualizar o modal com as informações
         terapiaImagemModal.src = imagem;
         terapiaImagemModal.alt = titulo;
         terapiaTitulo.textContent = titulo;
